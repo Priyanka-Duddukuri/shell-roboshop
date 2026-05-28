@@ -51,5 +51,6 @@ do
         else
             echo "roboshop-$instance already running: $INSTANCE_ID"
         fi
-    if
+    fi
+
 done
