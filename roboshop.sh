@@ -15,6 +15,7 @@ do
         --query 'Instances[0].InstanceId' \
         --output text
     )
+
     echo "Instance ID: $INSTANCE_ID"
 
     if [ $instance == "frontend" ]; then
@@ -28,6 +29,7 @@ do
          --query 'Reservations[*].Instances[*].PrivateIpAddress' \
          --output text
         )
+        
         R53_RECORD="$instance.$DOMAIN_NAME"
     fi
     
