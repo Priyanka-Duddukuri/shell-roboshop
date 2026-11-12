@@ -7,7 +7,7 @@ DOMAIN_NAME="jhlittles.shop"
 for instance in $@
 do
     echo "Launching instance: $instance"
-    INSTANCE_ID=(aws ec2 run-instances \
+    INSTANCE_ID=$(aws ec2 run-instances \
     --image-id ami-0055977a6e828a4f4 \
     --instance-type t3.micro \
     --security-groups "daws90-allow-all" "roboshop-$instance" \
