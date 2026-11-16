@@ -23,13 +23,13 @@ do
          --query 'Reservations[*].Instances[*].PublicIpAddress' \
          --output text
         )
-        R53_RECORD="$DOMAIN_NAME"
+        R53_RECORD="$instance.$DOMAIN_NAME"
     else
         IP=$(aws ec2 describe-instances --instance-ids $INSTANCE_ID \
          --query 'Reservations[*].Instances[*].PublicIpAddress' \
          --output text
         )
-        R53_RECORD="$DOMAIN_NAME"
+        R53_RECORD="$instance.$DOMAIN_NAME"
     fi
 
     #### Updating R53 Record ####
