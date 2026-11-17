@@ -15,7 +15,7 @@ do
             --query 'Instances[0].InstanceId' \
             --output text 
             )
-    echo "Instance ID: $instance"
+    echo "Instance ID: $INSTANCE_ID"
 
 
     if [ $instance == "frontend" ]; then
