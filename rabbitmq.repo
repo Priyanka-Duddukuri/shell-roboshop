@@ -1,4 +1,10 @@
-
+[modern-erlang]
+name=modern-erlang-el9
+baseurl=https://yum1.novemberain.com/erlang/el/9/$basearch
+        https://yum2.novemberain.com/erlang/el/9/$basearch
+        https://dl.cloudsmith.io/public/rabbitmq/rabbitmq-erlang/rpm/el/9/$basearch
+enabled=1
+gpgcheck=0
 
 [modern-erlang-noarch]
 name=modern-erlang-el9-noarch
