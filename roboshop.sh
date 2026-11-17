@@ -8,7 +8,7 @@ for instance in $@
 do
     echo "Launching instance: $instance"
     INSTANCE_ID=$( aws ec2 run-instances \
-            --image-id $AMI_ID \
+            --image-id ami-0055977a6e828a4f4 \
             --instance-type t3.micro \
             --security-groups "daws90-allow-all" "roboshop-$instance" \
             --tag-specifications "ResourceType=instance,Tags=[{Key=Name,Value=roboshop-$instance}]" \
@@ -16,10 +16,6 @@ do
             --output text 
             )
             echo "Launched Instance: $INSTANCE_ID"
-            aws ec2 wait instance-running --instance-ids $INSTANCE_ID
-            echo "Instance is running: $INSTANCE_ID"
-            echo "roboshop-$instance already running: $INSTANCE_ID"
-
 
     if [ $instance == "frontend" ]; then
         IP=$(aws ec2 describe-instances --instance-ids $INSTANCE_ID \
