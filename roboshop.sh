@@ -15,7 +15,10 @@ do
             --query 'Instances[0].InstanceId' \
             --output text 
             )
-    echo "Instance ID: $INSTANCE_ID"
+            echo "Launched Instance: $INSTANCE_ID"
+            aws ec2 wait instance-running --instance-ids $INSTANCE_ID
+            echo "Instance is running: $INSTANCE_ID"
+            echo "roboshop-$instance already running: $INSTANCE_ID"
 
 
     if [ $instance == "frontend" ]; then
